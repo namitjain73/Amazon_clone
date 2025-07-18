@@ -1,98 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namit's Shop - Premium E-commerce Experience</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-
-    <div class="nav-bar">
-        <div class="nav-logo border">
-            <img class="nav-img" src="amazon_logo.png" alt="">
-        </div>
-        
-        
-        <div class="nav-address border">
-            <p class="nav-first">Deliver to</p> 
-            <div class="nav-icon">
-                <i class="fa-solid fa-location-dot"></i>
-                <p class="nav-sec">India</p>
-            </div> 
-            
-        </div>
-
-        <div class="nav-search">
-            <select class="search-option">
-                <option>All</option>
-            </select>
-            <input class="search-input" type="text" placeholder="Search Amazon">
-            <div class="search-icon">
-
-                
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-
-        </div>
-
-
-        <div class="account border">
-            <p class="account-1">
-                Hello, sign in
-            </p>
-            <p class="account-2">
-                Account & Lists
-            </p>
-        </div>
-
-        <div class="return border">
-            <p class="return-1">
-                Returns
-            </p>
-            <p class="return-2">
-                & Orders
-            </p>
-        </div>
-
-        <div class="cart border">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            <p class="cart-1">Cart</p>
-        </div>
-        
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">Namit's Shop</div>
+    
+    <div class="search-container">
+      <div class="search-bar">
+        <select id="category">
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="home">Home & Garden</option>
+          <option value="sports">Sports</option>
+        </select>
+        <input type="text" placeholder="Search for products..." id="searchInput">
+        <button type="button" onclick="searchProducts()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
 
-    <div class="extra">
-        <div class="extra-1">
-            <i class="fa-solid fa-bars"></i>
-            <p>All</p>
-        </div>
-        <div class="extra-2">
-            <p>Today's Deal</p>
-            <p>Customer Service</p>
-            <p>Registry</p>
-            <p>Gift card</p>
-            <p>Sell</p>
-        </div>
+    <div class="nav-actions">
+      <div class="nav-item" onclick="toggleAccount()">
+        <i class="fas fa-user"></i>
+        <span>Account</span>
+      </div>
+      
+      <div class="nav-item" onclick="toggleWishlist()">
+        <i class="fas fa-heart"></i>
+        <span>Wishlist</span>
+      </div>
+      
+      <div class="nav-item" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+        <div class="cart-badge" id="cartBadge">0</div>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Premium Shopping Experience</h1>
+      <p class="hero-subtitle">Discover amazing products with unbeatable prices and quality</p>
+      <a href="#products" class="hero-cta">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+    <h2 class="section-title">Featured Products</h2>
+    
+    <div class="product-grid" id="productGrid">
+      <!-- Products will be dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3 class="cart-title">Shopping Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p style="text-align: center; color: #666; margin-top: 50px;">Your cart is empty</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About ShopVibe</h3>
+        <p>Your premium destination for quality products and exceptional shopping experience.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Customer Service</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Returns</a>
+        <a href="#">Shipping Info</a>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
     </div>
     
-</header>
-    <!-- <div class="body"> -->
-        <div class="hero-sec">
-            <p class="msg">You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="https.//amazon.com">Click here to go to amazon.in</a></p>
-        
-        
-        
-        </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopVibe. All rights reserved. | Enhanced by Claude AI</p>
+    </div>
+  </footer>
 
-    <!-- </div> -->
-     <div>
-     </div>
-
-
-
+  <script src="script.js"></script>
 </body>
 </html>
+    
+
